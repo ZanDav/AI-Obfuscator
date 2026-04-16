@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Compilation output
+out/
+dist/
+
+# VS Code specific
+.vscode-test/
+*.vsix
+
+# Local test files (created during development)
+index.txt
+index.txt.obf
+00_ai_test_*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local

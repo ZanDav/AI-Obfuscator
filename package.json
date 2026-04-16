@@ -1,0 +1,93 @@
+{
+  "name": "ai-obfuscator",
+  "displayName": "AI Obfuscator",
+  "description": "Encrypt/Decrypt files via context menu to hide content from AI assistants. Auto-detects state from file content.",
+  "version": "1.1.0",
+  "publisher": "Davide",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZanDav/AI-Obfuscator"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ai-obfuscated",
+        "firstLine": "^AIOBF:.*"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ai-obfuscator.encrypt",
+        "title": "Encrypt (Obfuscate for AI)",
+        "category": "AI Obfuscator"
+      },
+      {
+        "command": "ai-obfuscator.decrypt",
+        "title": "Decrypt (Restore Content)",
+        "category": "AI Obfuscator"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "ai-obfuscator.encrypt",
+          "group": "navigation",
+          "when": "resourceScheme == 'file' && !explorerResourceIsFolder && resourceLangId != 'ai-obfuscated'"
+        },
+        {
+          "command": "ai-obfuscator.decrypt",
+          "group": "navigation",
+          "when": "resourceScheme == 'file' && !explorerResourceIsFolder && resourceLangId == 'ai-obfuscated'"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "ai-obfuscator.encrypt",
+          "group": "navigation",
+          "when": "resourceScheme == 'file' && resourceLangId != 'ai-obfuscated'"
+        },
+        {
+          "command": "ai-obfuscator.decrypt",
+          "group": "navigation",
+          "when": "resourceScheme == 'file' && resourceLangId == 'ai-obfuscated'"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "ai-obfuscator.encrypt",
+          "group": "navigation",
+          "when": "resourceScheme == 'file' && resourceLangId != 'ai-obfuscated'"
+        },
+        {
+          "command": "ai-obfuscator.decrypt",
+          "group": "navigation",
+          "when": "resourceScheme == 'file' && resourceLangId == 'ai-obfuscated'"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.70.0",
+    "@vscode/vsce": "^3.9.0",
+    "typescript": "^4.7.4"
+  }
+}

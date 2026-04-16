@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+out/test/**
+src/**
+.gitignore
+.vsls.json
+tsconfig.json
+vsc-extension-quickstart.md
+CHANGELOG.md
+README.md
+!README.md
+!CHANGELOG.md
+*.vsix
+node_modules/**
