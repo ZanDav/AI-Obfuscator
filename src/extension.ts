@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
-import * as path from 'fs'; // Note: path was imported as fs in user's change, fixing it to 'path'
 import * as pathMod from 'path';
 
 const ALGORITHM = 'aes-256-cbc';

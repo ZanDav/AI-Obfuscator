@@ -41,36 +41,36 @@
         {
           "command": "ai-obfuscator.encrypt",
           "group": "navigation",
-          "when": "resourceScheme == 'file' && !explorerResourceIsFolder && resourceLangId != 'ai-obfuscated'"
+          "when": "resourceScheme == 'file' && !explorerResourceIsFolder && resourceExtname != '.obf'"
         },
         {
           "command": "ai-obfuscator.decrypt",
           "group": "navigation",
-          "when": "resourceScheme == 'file' && !explorerResourceIsFolder && resourceLangId == 'ai-obfuscated'"
+          "when": "resourceScheme == 'file' && !explorerResourceIsFolder && resourceExtname == '.obf'"
         }
       ],
       "editor/context": [
         {
           "command": "ai-obfuscator.encrypt",
           "group": "navigation",
-          "when": "resourceScheme == 'file' && resourceLangId != 'ai-obfuscated'"
+          "when": "resourceScheme == 'file' && resourceExtname != '.obf'"
         },
         {
           "command": "ai-obfuscator.decrypt",
           "group": "navigation",
-          "when": "resourceScheme == 'file' && resourceLangId == 'ai-obfuscated'"
+          "when": "resourceScheme == 'file' && resourceExtname == '.obf'"
         }
       ],
       "editor/title/context": [
         {
           "command": "ai-obfuscator.encrypt",
           "group": "navigation",
-          "when": "resourceScheme == 'file' && resourceLangId != 'ai-obfuscated'"
+          "when": "resourceScheme == 'file' && resourceExtname != '.obf'"
         },
         {
           "command": "ai-obfuscator.decrypt",
           "group": "navigation",
-          "when": "resourceScheme == 'file' && resourceLangId == 'ai-obfuscated'"
+          "when": "resourceScheme == 'file' && resourceExtname == '.obf'"
         }
       ]
     }
